@@ -1,0 +1,91 @@
+
+import java.util.Scanner;
+import java.util.Stack;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author h.abreu
+ */
+public class stacks {
+    public static void main(String[] args){
+    Scanner kb= new Scanner(System.in);
+    
+    System.out.println("Enter first character");
+     String one =kb.next();
+    System.out.println("Enter second character");
+    String two =kb.next();
+    System.out.println("Enter third character");
+    String three =kb.next();
+    System.out.println("Enter fourth character");
+    String four =kb.next();
+    
+    Boolean check= true;
+    
+    String test= "(";
+    String show= "{";
+    String look= "[";
+    
+    String test1= ")";
+    String show1= "}";
+    String look1= "]";
+    
+    System.out.println(one+two+three+four);
+    
+    
+    Stack<String> STACK= new Stack<String>();
+    
+    
+    if(one.equals(test)  || one.equals(show)  || one.equals(look))
+        STACK.push(one);
+    if ((two.equals(test1))  || (two.equals(show1))  || (two.equals(look1)))
+    {
+        STACK.pop();
+        if((one.equals(test)&& two.equals(test1)) || ((one.equals(show)&& two.equals(show1))) ||(one.equals(look)&& two.equals(look1)))
+        System.out.println("match");
+    }
+    else if ((three.equals(test1)) || (three.equals(show1))|| (three.equals(look1)))
+        STACK.pop();
+        if((one.equals(test)&& three.equals(test1)) || ((one.equals(show)&& three.equals(show1))) ||(one.equals(look)&& three.equals(look1)))
+        System.out.println("match");
+    else if ((four.equals(test1)) || (four.equals(show1))|| (four.equals(look1)))
+    {
+        STACK.pop();
+        if((one.equals(test)&& four.equals(test1)) || ((one.equals(show)&& four.equals(show1))) ||(one.equals(look)&& four.equals(look1)))
+        System.out.println("match");
+        
+    }
+        else
+    {
+        System.out.println("This is an error");
+        check=false;
+       }
+    }
+
+if(check =true)
+STACK.push(one);
+STACK.push(two);
+
+{
+if(three.equals(test))  || (three.equals(show))  || (three.equals(look)))
+{
+STACK.push(two);
+if ((four.equals(test1)) || (four.equals(show1))|| (four.equals(look1)))
+{
+STACK.pop();
+        if((three.equals(test)&& four.equals(test1)) || ((three.equals(show)&& four.equals(show1))) ||(three.equals(look)&& four.equals(look1)))
+        System.out.println("match");
+
+
+}
+else
+{
+System.out.println("Incorrect statement");
+check=false;
+}
+}
+}
